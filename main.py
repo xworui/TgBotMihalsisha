@@ -42,7 +42,7 @@ def button(message):
     comp = types.KeyboardButton('/comp')
     number = types.KeyboardButton('/number')
     markup.add(ball, comp, number)
-    bot.send_message(message.chat.id, 'Кнопки появились', reply_markup=markup)
+    bot.send_message(message.chat.id, 'Кнопки появились ', reply_markup=markup)
 
 
 
