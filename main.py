@@ -24,6 +24,10 @@ def comp(message):
     mess = ['ты невероятая', 'ты самая лучшая', 'ты самая красивая', 'ты самая милая', 'я люблю тебя', 'ты моя принцесса', 'я тебя обожаю', 'ты даришь мне радость', 'у тебя самые красивый глаза', 'у тебя классная попа', 'у тебя прекрасные волосы', 'ты вкусно пахнешь']
     bot.send_message(message.chat.id, random.choice(mess))
 
+@bot.message_handler(commands=['yorn'])
+def yorn(message):
+    mess = ['yes', 'no']
+    bot.send_message(message.chat.id, random.choice(mess))
 
 @bot.message_handler(commands=['help'])
 def help(message):
@@ -41,7 +45,8 @@ def button(message):
     ball = types.KeyboardButton('/ball')
     comp = types.KeyboardButton('/comp')
     number = types.KeyboardButton('/number')
-    markup.add(ball, comp, number)
+    yorn = types.KeyboardButton('/yorn')
+    markup.add(ball, comp, number, yorn)
     bot.send_message(message.chat.id, 'Кнопки появились ', reply_markup=markup)
 
 
