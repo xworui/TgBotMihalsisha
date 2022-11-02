@@ -51,6 +51,7 @@ def button(message):
     comp = types.KeyboardButton('/comp')
     number = types.KeyboardButton('/number')
     yorn = types.KeyboardButton('/yorn')
+    sex = types.KeyboardButton('/sex')
     markup.add(ball, comp, number, yorn)
     bot.send_message(message.chat.id, 'Кнопки появились ', reply_markup=markup)
 
