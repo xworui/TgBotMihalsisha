@@ -39,6 +39,11 @@ def number(message):
     bot.send_message(message.chat.id, f'Число от 1 до 10:\n           \    / \n             <b>{randint(1, 10)}</b>', parse_mode='html')
 
 
+@bot.message_handler(commands=['sex'])
+def sex(message):
+    bot.send_message(message.chat.id, '<u>ты сегодня секси</u>,', parse_mode='html')
+
+
 @bot.message_handler(commands=['button'])
 def button(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
