@@ -41,7 +41,7 @@ def number(message):
 
 @bot.message_handler(commands=['button'])
 def button(message):
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
     ball = types.KeyboardButton('/ball')
     comp = types.KeyboardButton('/comp')
     number = types.KeyboardButton('/number')
