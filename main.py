@@ -38,15 +38,21 @@ def help(message):
 def number(message):
     bot.send_message(message.chat.id, f'Число от 1 до 10:\n           \    / \n             <b>{randint(1, 10)}</b>', parse_mode='html')
 
+@bot.message_handler(commands=['prav'])
+def prav(message):
+    messagePrav = ['Никита', 'Алина']
+    bot.send_message(message.chat.id, random.choice(messagePrav))
+
 
 @bot.message_handler(commands=['button'])
 def button(message):
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
     ball = types.KeyboardButton('/ball')
     comp = types.KeyboardButton('/comp')
     number = types.KeyboardButton('/number')
     yorn = types.KeyboardButton('/yorn')
-    markup.add(ball, comp, number, yorn)
+    prav = types.KeyboardButton('/prav')
+    markup.add(ball, comp, number, yorn, prav)
     bot.send_message(message.chat.id, 'Кнопки появились ', reply_markup=markup)
 
 
